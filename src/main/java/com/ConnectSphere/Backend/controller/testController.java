@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class testController {
-    @GetMapping("/abc")
+    @GetMapping("/")
     public String home() {
         return "Spring Boot is Working Fine!";
     }
