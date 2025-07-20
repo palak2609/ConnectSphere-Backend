@@ -1,4 +1,5 @@
-package com.ConnectSphere.Backend.config.model;
+package com.ConnectSphere.Backend.model;
+
 
 
 import jakarta.persistence.*;

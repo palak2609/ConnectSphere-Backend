@@ -2,7 +2,7 @@ package com.ConnectSphere.Backend.service;
 
 
 import com.ConnectSphere.Backend.Repository.UserRepository;
-import com.ConnectSphere.Backend.config.model.User;
+import com.ConnectSphere.Backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

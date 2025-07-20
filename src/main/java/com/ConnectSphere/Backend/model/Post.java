@@ -1,19 +1,12 @@
-package com.ConnectSphere.Backend.config.model;
+package com.ConnectSphere.Backend.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.JoinColumn; // For @JoinColumn
+import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDateTime; // For createdAt timestamp (common for posts)
 
 
 @Entity
@@ -41,9 +34,11 @@ public class Post {
     // --- CHANGE MADE HERE: Instead of replyTwits, this is for comments on this post ---
     // Original: @OneToMany
     // Original: private List<Twit> replyTwits = new ArrayList<>();
-    @OneToMany
-//    (mappedBy = "replyFor", cascade = CascadeType.ALL) // Mapped by "replyFor" in the Comment entity
-    private List<Post> comments = new ArrayList<>(); // Changed name to 'comments' and type to 'Post' itself (as replies are also posts)
+    @OneToMany (mappedBy = "replyFor", cascade = CascadeType.ALL)
+    private List<Post> comments = new ArrayList<>();
+
+    //    (mappedBy = "replyFor", cascade = CascadeType.ALL) // Mapped by "replyFor" in the Comment entity
+//    private List<Post> comments = new ArrayList<>(); // Changed name to 'comments' and type to 'Post' itself (as replies are also posts)
     // --- END CHANGE ---
 
 
